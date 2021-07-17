@@ -1,0 +1,7 @@
+Locations With Openings Near ZIP {{ current }}</h1>
+    {% for location in locations %}
+            > {{ location.model.name }} - {{ location.model.address }}
+            >>About {{ location.distance }} minutes away
+            >>{{ location.model.url }}
+    {% endfor %}
+If you wish to unsubscribe, please go to https://covidvaccinate.me/unsubscribe/.

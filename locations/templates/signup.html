@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="{% url 'home' %}">COVIDvaccinate.me</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler float-right" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'signup' %}">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'dashboard' %}">dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="bg-dark register-photo">
+        <div class="form-container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div><h1 style="color: white;">{{message}}</h1></div>
+                {% endfor %}
+            {% endif %}
+            <div class="image-holder"></div>
+            <form method="post">
+                <h2 class="text-center">Sign Up for Daily Updates!</h2>
+                <div class="form-group">{{ form.as_p }}</div>
+                {% csrf_token %}
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div>
+                <a class="already" href="{% url 'unsubscribe' %}">If you wish to no longer receive emails, click here.</a>
+            </form>
+        </div>
+    </section>
+    <script type="text/javascript">
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before
+      "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="//statmn.org/matomo/matomo/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '1']);
+          var d=document, g=d.createElement('script'),
+      s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.src=u+'matomo.js';
+      s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+    <footer>
+        <div class="container">
+            <p>Let's Make This a "Vaccination Nation"</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="https://www.github.com/murrasource/COVIDvaccinate.me/">GitHub Repo</a></li>
+            </ul>
+        </div>
+    </footer>
+{% endblock %}

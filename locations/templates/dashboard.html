@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header class="topbar">
+        <h1 class="text-center"><a class="topbartext js-scroll-trigger" href="{% url 'home' %}">COVIDvaccinate.me</a></h1>
+    </header>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <h1>Locations With Openings Near {{ current }}</h1>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Short-Notice Appointment Resource</h4>
+            <h6 class="text-muted card-subtitle mb-2">Use this StatMN resource to keep tabs on short-notice appointments:</h6>
+            <a class="card-link" href="https://vax.statmn.org/">Go to short-notice resource</a>
+        </div>
+    </div>
+    {% if locations %}
+        {% for location in locations %}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{{ location.model.name }} - {{ location.model.address }}</h4>
+                <h6 class="text-muted card-subtitle mb-2">About {{ location.distance }} miles away</h6>
+                <a class="card-link" href="{{ location.model.url }}">Schedule with provider</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Updating Locations...</h4>
+                <h6 class="text-muted card-subtitle mb-2">This may take a few moments.</h6>
+                <a class="card-link" href=".">Click here to refresh page</a>
+            </div>
+        </div>
+    {% endif %}
+    <script type="text/javascript">
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before
+      "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="//statmn.org/matomo/matomo/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '1']);
+          var d=document, g=d.createElement('script'),
+      s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.src=u+'matomo.js';
+      s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+{% endblock %}
