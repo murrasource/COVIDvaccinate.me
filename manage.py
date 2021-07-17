@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
@@ -22,6 +23,8 @@ def main():
 if __name__ == '__main__':
     main()
 =======
+=======
+>>>>>>> 824e994a7c22c2c641408228246b52b1f066ce1f
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
@@ -44,4 +47,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+<<<<<<< HEAD
 >>>>>>> 824e994... All 50 states
+=======
+>>>>>>> 824e994a7c22c2c641408228246b52b1f066ce1f
