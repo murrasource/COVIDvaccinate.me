@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">COVIDvaccinate.me</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler float-right" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'signup' %}">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'dashboard' %}">Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background:url({% static 'assets/img/bg-pattern.png' %}), linear-gradient(to left, #7b4397, #dc2430);height:100%;">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-7 my-auto">
+                    <div class="mx-auto header-content">
+                        <h1 class="text-left mb-5">An open-source project that emails you daily updates on the nearest pharmacies that have vaccination slots open.</h1>
+                        <a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="{% url 'signup' %}">Sign up now!</a>
+                        <a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="https://givebutter.com/CiUxUO">Donate!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="text-center bg-primary download" id="download">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h2 class="section-heading">Pharmacy Information Now Available for All States</h2>
+                    <img src="{% static 'assets/img/map.png' %}" width="80%">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="features" class="features">
+        <div class="container">
+            <div class="text-center section-heading">
+                <h2>Open-Source Public Health</h2>
+                <p class="text-muted">Our goal is to transparently help eligible people find the nearest and soonest opportunity to get vaccinated against COVID-19.</p>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="feature-item"><i class="icon-screen-smartphone text-primary"></i>
+                                    <h3>Save as an App</h3>
+                                    <p class="text-muted">Save this website (<a href="https://mobilesyrup.com/2020/05/24/how-install-progressive-web-app-pwa-android-ios-pc-mac/">intructions</a>) to your homescreen and it will download the app. Access the appointment dashboard at any time for the latest information.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item"><i class="material-icons text-primary">email</i>
+                                    <h3>Daily Emails</h3>
+                                    <p class="text-muted">Receive emails daily updating you on the openings available near you.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item"><i class="icon-present text-primary"></i>
+                                    <h3>Free to Use</h3>
+                                    <p class="text-muted">Sign up and use completely free. Period.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item"><i class="icon-lock-open text-primary"></i>
+                                    <h3>Open Source</h3>
+                                    <p class="text-muted">We aim to be transparent about this project, so feel free to take a look at our GitHub page.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" style="background-image:url({% static 'assets/img/group.jpg' %});">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Let's Get This Done ASAP!</h2><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="{% url 'signup' %}">Sign Up now!</a>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+    <section class="bg-primary contact" id="contact">
+        <div class="container">
+            <h2><span>Please Share This With At-Risk Loved Ones!</span></h2>
+            <ul class="list-inline list-social">
+                <li class="list-inline-item social-twitter"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcovidvaccinate.me"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item social-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcovidvaccinate.me%2F&amp;amp;src=sdkpreparse"><i class="fa fa-facebook"></i></a></li>
+                <li class="list-inline-item social-google-plus"><a href="sms://?&amp;body=https%3A%2F%2Fcovidvaccinate.me"><i class="fas fa-sms"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="https://statmn.org/">A StatMN Project</a></li>
+                <li class="list-inline-item"><a href="https://www.github.com/murrasource/COVIDvaccinate.me/">GitHub Repo</a></li>
+            </ul>
+        </div>
+    </footer>
+{% endblock %}
