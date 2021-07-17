@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+    <img src="{{ link }}">
+    <h1>Locations With Openings Near ZIP {{ current }}</h1>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Short-Notice Appointment Resource</h4>
+            <h6 class="text-muted card-subtitle mb-2">Use this StatMN resource to keep tabs on short-notice appointments:</h6>
+            <a class="card-link" href="https://vax.statmn.org/">Go to short-notice resource</a>
+        </div>
+    </div>
+    <hr>
+    {% for location in locations %}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ location.model.name }} - {{ location.model.address }}</h4>
+            <h6 class="text-muted card-subtitle mb-2">About {{ location.distance }} miles away</h6>
+            <a class="card-link" href="{{ location.model.url }}">Schedule with provider</a>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+    <h3>Please consider <a href="https://givebutter.com/CiUxUO">donating</a> to keep this service free!</h3>
+    <p>If you wish to unsubscribe, please click <a href="https://covidvaccinate.me/unsubscribe/">here.</a></p>
+{% endblock %}
